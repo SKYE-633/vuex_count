@@ -1,8 +1,8 @@
 <template>
-  <div class="hello">
-    <button @click="increase">+</button>
-    <span>{{count}}</span>
-    <button @click="decrease">-</button>
+  <div>
+    <button @click="$store.commit('increment')">+</button>
+    <span>{{$store.state.count}}</span>
+    <button @click="$store.commit('decrement')">-</button>
   </div>
 </template>
 
@@ -10,25 +10,16 @@
 import { mapState } from 'vuex'
 export default {
   name: 'Count',
-  props: {
-    msg: String
-  },
+  
   data () {
     return {
-     count: 0
+    
     }
   },
   methods:{
-    increase () {
-      this.count++
-    },
-    drease () {
-      this.count--
-    }
-  },
-  computed: mapState({
     
-  })
+  }
+  
 }
 </script>
 
